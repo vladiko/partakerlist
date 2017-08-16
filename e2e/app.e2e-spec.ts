@@ -1,14 +1,14 @@
-import { PartakerlistPage } from './app.po';
+import { AppPage } from './app.po';
 
 describe('partakerlist App', () => {
-  let page: PartakerlistPage;
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new PartakerlistPage();
+    page = new AppPage();
   });
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });
