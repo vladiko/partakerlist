@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Добро пожаловать на встречу выпускников!!!';
+  placeMsg = 'Встреча состоится 9 сентября в 19:00 в кафе Жаксын';
 }
