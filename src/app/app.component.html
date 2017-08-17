@@ -5,18 +5,41 @@
       <p>
   </div>
 </div>
+
+
 <div class="container">
   <div class="card">
-    <div class="card-block">
-      <h4>Запись</h4>
-      <span>Имя </span>
-      <input [(ngModel)]="regName" />
-      <span>Фамилия </span>
-      <input [(ngModel)]="regLastName" />
-      <button class="" [disabled]="!isAddButonEnabled" (click)=registrate()>Записаться</button>
-    </div>
+    <h4 class="card-title">Запись</h4>
   </div>
+  <div class="card" style="padding: 10px">
+    <table>
+      <tr>
+        <td>
+          <label style="min-width: 150px">Имя</label>
+        </td>
+        <td>
+          <input [(ngModel)]="regName" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Фамилия</label>
+        </td>
+        <td>
+          <input [(ngModel)]="regLastName" />
+        </td>
+      </tr>
+    </table>
+    <button style="margin:20px; max-width: 250px" class="btn" [disabled]="!isAddButonEnabled" (click)=registrate()>Записаться</button>
+  </div>
+
+
+
+
 </div>
+
+
+
 <div style="margin-top: 20px" class="container">
   <div class="card">
     <h3 class="card-title">
