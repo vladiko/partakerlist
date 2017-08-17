@@ -1,7 +1,44 @@
-<h1>{{title}}</h1>
-<h2>{{placeMsg}}</h2>
-<ul>
-  <li *ngFor="let p of partakers">
-    <span>{{p.firstName}} {{p.lastName}}</span>
-  </li>
-</ul>
+<div class="jumbotron">
+  <div class="container">
+    <h1>{{title}}</h1>
+    <p>{{placeMsg}}
+      <p>
+  </div>
+</div>
+<div class="container">
+  <div class="card">
+    <div class="card-block">
+      <h4>Запись</h4>
+      <span>Имя </span>
+      <input [(ngModel)]="regName" />
+      <span>Фамилия </span>
+      <input [(ngModel)]="regLastName" />
+      <button class="" [disabled]="!isAddButonEnabled" (click)=registrate()>Записаться</button>
+    </div>
+  </div>
+</div>
+<div style="margin-top: 20px" class="container">
+  <div class="card">
+    <h3 class="card-title">
+      Список записавшихся:
+    </h3>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let p of partakers">
+        <span>{{p.firstName}} {{p.lastName}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<!--<div class="container">
+  <div>
+    <h3>Список записавшихся:</h3>
+  </div>
+  <ul>
+    <li *ngFor="let p of partakers">
+      <span>{{p.firstName}} {{p.lastName}}</span>
+    </li>
+  </ul>
+</div>-->
