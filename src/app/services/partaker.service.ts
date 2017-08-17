@@ -7,7 +7,11 @@ export class PartakerService {
   public partakers: Partaker[];
 
   constructor() {
-    this.partakers = [new Partaker('Vova', 'Kogan'), new Partaker('Tania', 'Borisova')];
+    this.partakers = [
+      new Partaker('Vova', 'Kogan'),
+      new Partaker('Erden', 'Magzumov'),
+      new Partaker('Tania', 'Borisova')
+    ];
   }
 
   addPartaker(partaker: Partaker) {
