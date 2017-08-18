@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PartakerService } from './services/partaker.service';
+import { CommunicationService } from './services/communication.service';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,12 @@ import { PartakerService } from './services/partaker.service';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     FormsModule
   ],
-  providers: [PartakerService],
+  providers: [
+    PartakerService,
+    CommunicationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
