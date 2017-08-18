@@ -19,7 +19,11 @@ export class PartakerService {
   }
 
   addPartaker(partaker: Partaker) {
-    this.partakers.push(partaker);
+    this.communicationService.addNewPartaker(partaker).then(() => {
+      this.communicationService.getPartakerList().then((s) => {
+        this.partakers = s;
+      });
+    });
   }
 
   removePartaker(partaker: Partaker) {

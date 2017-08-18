@@ -36,5 +36,6 @@ export class AppComponent {
   public registrate() {
     const p = new Partaker(this.regName, this.regLastName);
     this.partakerService.addPartaker(p);
+    // this.partakerService.addPartaker(p);
   }
 }
