@@ -1,0 +1,18 @@
+.visible-onhover {
+    opacity: 0;
+    &:hover {
+        opacity: 1;
+        width:200px;
+    }
+    transition-duration: 10ms;
+    transition-delay: 3s;
+} 
+.ritht-corner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+} 
+.andmin-input {
+    font-size: 20px;
+    width: 40px;
+}

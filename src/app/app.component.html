@@ -1,7 +1,8 @@
 <div class="jumbotron">
   <div class="container">
     <h1>{{title}}</h1>
-    <p>{{placeMsg}}
+    <p>
+      <h6>{{placeMsg}}</h6>
       <p>
   </div>
 </div>
@@ -9,9 +10,9 @@
 
 <div class="container">
   <div class="card">
-    <h4 class="card-title">Запись</h4>
+    <h4 style="margin-left: 10px" class="card-title">Запись</h4>
   </div>
-  <div class="card" style="padding: 10px">
+  <div class="card" style="padding: 10px 20px 0px 20px">
     <table>
       <tr>
         <td>
@@ -34,24 +35,25 @@
   </div>
 </div>
 
-
-
 <div style="margin-top: 20px" class="container">
   <div class="card">
-    <h3 class="card-title">
+    <h3 style="margin-left: 10px" class="card-title">
       Список записавшихся:
     </h3>
     <ul class="list-group list-group-flush">
       <li style="display: flex" class="list-group-item" *ngFor="let p of partakers">
         <span style="flex-grow: 2">{{p.firstName}} {{p.lastName}}</span>
-        <a class="btnbtn-outline-danger" style="color: red" (click)="remove(p)" href="path/to/settings" aria-label="Delete">
-                  <i class="fa fa-trash-o" aria-hidden="true"></i>                  </a>
+        <a [style.display]="isAdmin ? '': 'none'" class="btnbtn-outline-danger" style="color: red ;cursor: pointer" (click)="remove(p)" aria-label="Delete">
+                 <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </a>
         <!--<span >x</span>-->
       </li>
     </ul>
   </div>
 </div>
 
+
+<input *ngIf="!isAdmin" [(ngModel)]="adminInput" class='visible-onhover ritht-corner andmin-input' />
 
 
 <!--<div class="container">

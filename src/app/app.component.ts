@@ -10,7 +10,13 @@ import * as _ from 'lodash';
 })
 export class AppComponent {
   title = 'Добро пожаловать на встречу выпускников!!!';
-  placeMsg = 'Встреча состоится 9 сентября в 19:00 в кафе Жаркын';
+  placeMsg = 'Встреча состоится 9 сентября. Точное время и место будут опубликованы позже.';
+
+  public adminInput: string;
+
+  public get isAdmin(): boolean {
+    return this.adminInput === 'admin';
+  }
 
   public regName: string;
   public regLastName: string;
@@ -41,6 +47,6 @@ export class AppComponent {
   }
 
   public remove(p: Partaker) {
-     this.partakerService.removePartaker(p);
+    this.partakerService.removePartaker(p);
   }
 }
