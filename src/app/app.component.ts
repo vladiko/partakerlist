@@ -15,7 +15,7 @@ export class AppComponent {
   public adminInput: string;
 
   public get isAdmin(): boolean {
-    return this.adminInput === 'admin';
+    return this.adminInput && (this.adminInput.trim() === 'admin' || this.adminInput.trim().toLowerCase() === 'борисова');
   }
 
   public regName: string;
