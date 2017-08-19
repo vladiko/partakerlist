@@ -32,10 +32,6 @@
     </table>
     <button style="margin:20px; max-width: 250px" class="btn" [disabled]="!isAddButonEnabled" (click)=registrate()>Записаться</button>
   </div>
-
-
-
-
 </div>
 
 
@@ -46,8 +42,11 @@
       Список записавшихся:
     </h3>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item" *ngFor="let p of partakers">
-        <span>{{p.firstName}} {{p.lastName}}</span>
+      <li style="display: flex" class="list-group-item" *ngFor="let p of partakers">
+        <span style="flex-grow: 2">{{p.firstName}} {{p.lastName}}</span>
+        <a class="btnbtn-outline-danger" style="color: red" (click)="remove(p)" href="path/to/settings" aria-label="Delete">
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>                  </a>
+        <!--<span >x</span>-->
       </li>
     </ul>
   </div>

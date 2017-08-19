@@ -27,6 +27,10 @@ export class PartakerService {
   }
 
   removePartaker(partaker: Partaker) {
-    _.remove(this.partakers, partaker);
+    this.communicationService.removePartaker(partaker).then(() => {
+      this.communicationService.getPartakerList().then((s) => {
+        this.partakers = s;
+      });
+    });
   }
 }

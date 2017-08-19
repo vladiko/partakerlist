@@ -36,6 +36,11 @@ export class AppComponent {
   public registrate() {
     const p = new Partaker(this.regName, this.regLastName);
     this.partakerService.addPartaker(p);
+    this.regName = this.regLastName = '';
     // this.partakerService.addPartaker(p);
+  }
+
+  public remove(p: Partaker) {
+     this.partakerService.removePartaker(p);
   }
 }

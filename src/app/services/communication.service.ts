@@ -25,6 +25,12 @@ export class CommunicationService {
       .catch(err => { console.log(err); });
   }
 
+  removePartaker(partaker: Partaker) {
+    return this.http.delete(this.baseUrl, { body: partaker }).toPromise().then(responce => {
+    })
+      .catch(err => { console.log(err); });
+  }
+
 
   constructor(private http: Http) {
 
