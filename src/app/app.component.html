@@ -41,9 +41,11 @@
       Записались:
     </h3>
     <ul class="list-group list-group-flush">
-      <li style="display: flex" class="list-group-item" *ngFor="let p of partakers">
+      <li style="display: flex" class="list-group-item" *ngFor="let p of partakers; let i = index">
+        <span style="width: 30px;">{{i+1}} </span>
         <span style="flex-grow: 2">{{p.firstName}} {{p.lastName}}</span>
-        <a [style.display]="isAdmin ? '': 'none'" class="btnbtn-outline-danger" style="color: red ;cursor: pointer" (click)="remove(p)" aria-label="Delete">
+        <a [style.display]="isAdmin ? '': 'none'" class="btnbtn-outline-danger" style="color: red ;cursor: pointer" (click)="remove(p)"
+          aria-label="Delete">
                  <i class="fa fa-trash-o" aria-hidden="true"></i>
         </a>
         <!--<span >x</span>-->
