@@ -5,23 +5,20 @@ import { CommunicationService } from './communication.service';
 
 @Injectable()
 export class PartakerService {
-  public partakers: Partaker[];
+  public partakers: Partaker[] = [];
 
   constructor(private communicationService: CommunicationService) {
     this.communicationService.getPartakerList().then((s) => {
-      this.partakers = s;
+      this.partakers.length = 0;
+      this.partakers.concat(s);
     });
-    // this.partakers = [
-    //   new Partaker('Vova', 'Kogan'),
-    //   new Partaker('Erden', 'Magzumov'),
-    //   new Partaker('Tania', 'Borisova')
-    // ];
   }
 
   addPartaker(partaker: Partaker) {
     this.communicationService.addNewPartaker(partaker).then(() => {
       this.communicationService.getPartakerList().then((s) => {
-        this.partakers = s;
+        this.partakers.length = 0;
+        this.partakers.concat(s);
       });
     });
   }
@@ -29,7 +26,8 @@ export class PartakerService {
   removePartaker(partaker: Partaker) {
     this.communicationService.removePartaker(partaker).then(() => {
       this.communicationService.getPartakerList().then((s) => {
-        this.partakers = s;
+        this.partakers.length = 0;
+        this.partakers.concat(s);
       });
     });
   }
