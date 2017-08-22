@@ -41,7 +41,7 @@
       Записались:
     </h3>
 
-    <div *ngIf="!partakers || partakers.lenght || partakerService.loadingPartakers">loading ... </div>
+    <div *ngIf="!partakers || partakers.length || partakerService.loadingPartakers">loading ... </div>
     
     <ul class="list-group list-group-flush">
       <li style="display: flex" class="list-group-item" *ngFor="let p of partakers; let i = index">
