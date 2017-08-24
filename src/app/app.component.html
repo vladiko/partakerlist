@@ -13,7 +13,39 @@
     <h4 style="margin-left: 10px" class="card-title">Запись</h4>
   </div>
   <div class="card" style="padding: 10px 20px 0px 20px">
-    <table>
+    <div style="display: flex; flex-direction: row">
+      <div style="display: flex; flex-direction: column; margin-right: 8px">
+        <!-- <table>
+          <tr>
+            <td> -->
+        <label>Имя</label>
+        <!-- </td>
+          </tr>
+          <tr>
+            <td> -->
+        <label>Фамилия</label>
+        <!-- </td>
+          </tr>
+        </table> -->
+      </div>
+      <div style="display: flex; flex-direction: column; flex-grow: 2 ;max-width: 450px">
+        <!-- <table>
+          <tr>
+            <td> -->
+        <input style="margin-bottom: .2rem;" [(ngModel)]="regName" />
+        <!-- </td>
+          </tr>
+          <tr>
+            <td> -->
+        <input [(ngModel)]="regLastName" />
+        <!-- </td>
+          </tr>
+        </table> -->
+        <button style="margin:10px; align-self: flex-end;" class="btn" [disabled]="!isAddButonEnabled" (click)=registrate()>Записаться</button>
+        
+      </div>
+    </div>
+    <!-- <table>
       <tr>
         <td>
           <label style="min-width: 150px">Имя</label>
@@ -30,8 +62,10 @@
           <input [(ngModel)]="regLastName" />
         </td>
       </tr>
-    </table>
-    <button style="margin:20px; max-width: 250px" class="btn" [disabled]="!isAddButonEnabled" (click)=registrate()>Записаться</button>
+    </table> -->
+    <div style="display: flex; flex-direction: row">
+      <div style="flex-grow: 2"></div>
+    </div>
   </div>
 </div>
 
